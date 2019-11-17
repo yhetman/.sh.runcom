@@ -1,4 +1,7 @@
 # .sh.runcom
+
+## .bashrc
+
 The shell program /bin/bash (hereafter referred to as just "the shell") uses a collection of startup 
 files to help create an environment. Each file has a specific use and may affect login and interactive 
 environments differently. The files in the /etc directory generally provide global settings. 
