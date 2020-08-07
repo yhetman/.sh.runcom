@@ -76,8 +76,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -91,13 +91,14 @@ fi
 export PATH=$PATH:~/Applications/sublime_text_3
 export MAIL42=yhetman@student.unit.ua
 export USER42=yhetman
-
+export PATH="/$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 # some more ls aliases
+alias ls='ls -la --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias open='xdg-open'
-alias ls='ls -la'
+#alias ls='ls -la'
 alias git.log="git log --pretty=format:\"%h | %cd | [ %aN ] %s %d\" --date=format:\"%D %r\""
 alias git.graph="git.log --graph --topo-order --decorate --all --oneline"
 alias s='sublime_text'
@@ -128,3 +129,19 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yhetman/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yhetman/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yhetman/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yhetman/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
