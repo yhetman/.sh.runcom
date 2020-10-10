@@ -1,3 +1,4 @@
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -93,12 +94,14 @@ export MAIL42=yhetman@student.unit.ua
 export USER42=yhetman
 export PATH="/$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 # some more ls aliases
-alias ls='ls -la --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='ls --color=auto'
+alias ll='ls -hlG'
+alias la='ls -ahlG'
+alias ld='ls -ghl'
+alias l='ls -CFG'
 alias open='xdg-open'
 #alias ls='ls -la'
+alias sts="git status"
 alias git.log="git log --pretty=format:\"%h | %cd | [ %aN ] %s %d\" --date=format:\"%D %r\""
 alias git.graph="git.log --graph --topo-order --decorate --all --oneline"
 alias s='sublime_text'
@@ -144,4 +147,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
